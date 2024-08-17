@@ -1,0 +1,6 @@
+@MembershipExample.Presentation_HostAddress = http://localhost:5226
+
+GET {{MembershipExample.Presentation_HostAddress}}/api/Users
+Accept: application/json
+
+###
