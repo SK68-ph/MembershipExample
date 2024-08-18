@@ -1,12 +1,11 @@
 ﻿using FluentValidation;
-using MembershipExample.Application.Features.Users.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MembershipExample.Application.Validator
+namespace MembershipExample.Application.Features.Users.Commands
 {
     public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
     {

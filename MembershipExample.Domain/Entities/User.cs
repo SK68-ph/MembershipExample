@@ -13,6 +13,7 @@ namespace MembershipExample.Domain.Entities
         public string? Name { get; set; }
         public required string Email { get; set; }
         public required string PasswordHash { get; set; }
+        public string? PasswordSalt { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         public DateTime? LastLoginAt { get; set; }
