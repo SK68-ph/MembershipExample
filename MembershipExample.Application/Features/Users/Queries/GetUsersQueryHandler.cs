@@ -12,10 +12,10 @@ namespace MembershipExample.Application.Features.Users.Queries
 {
     public class GetUsersQueryHandler : IRequestHandler<GetUsersQuery, List<UserDto>>
     {
-        private readonly IMembershipRepository _userRepository;
+        private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
 
-        public GetUsersQueryHandler(IMembershipRepository userRepository, IMapper mapper)
+        public GetUsersQueryHandler(IUserRepository userRepository, IMapper mapper)
         {
             _userRepository = userRepository;
             _mapper = mapper;

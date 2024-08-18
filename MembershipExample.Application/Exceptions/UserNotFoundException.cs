@@ -8,12 +8,8 @@ namespace MembershipExample.Application.Exceptions
 {
     public class UserNotFoundException : Exception
     {
-        public UserNotFoundException(string message) : base(message) { }
+        public UserNotFoundException(string message) : base(message)
+        {
+        }
     }
-
-    public class UsernameAlreadyTakenException : Exception
-    {
-        public UsernameAlreadyTakenException(string message) : base(message) { }
-    }
-
 }

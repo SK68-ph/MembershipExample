@@ -9,5 +9,5 @@ using System.Threading.Tasks;
 namespace MembershipExample.Application.Features.Plans.Commands
 {
 
-    public record CreatePlanCommand(string Name, decimal Price, int DurationInDays) : IRequest<PlanDto>;
+    public record CreatePlanCommand(string Name, string Description, decimal Price, int DurationInDays) : IRequest<PlanDto>;
 }

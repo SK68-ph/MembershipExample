@@ -39,7 +39,7 @@ namespace MembershipExample.Application.Features.Users.Commands
             var existingUser = await _userRepository.GetByUsernameAsync(request.Username);
             if (existingUser != null)
             {
-                throw new UsernameAlreadyTakenException("Username is already taken");
+                throw new UsernameAlreadyTakenException($"Username {request.Username} is already taken.");
             }
 
             var salt = BCrypt.Net.BCrypt.GenerateSalt();

@@ -1,31 +1,28 @@
-﻿using AutoMapper;
+using AutoMapper;
 using FluentValidation;
 using MediatR;
 using MembershipExample.Application.DTOs;
 using MembershipExample.Application.Exceptions;
 using MembershipExample.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace MembershipExample.Application.Features.Memberships.Commands
+namespace MembershipExample.Application.Features.Memberships.Queries
 {
-    public class UpdateMembershipCommandHandler : IRequestHandler<UpdateMembershipCommand, MembershipDto>
+    public class GetMembershipByIdQueryHandler : IRequestHandler<GetMembershipByIdQuery, MembershipDto>
     {
         private readonly IMembershipRepository _membershipRepository;
         private readonly IMapper _mapper;
-        private readonly IValidator<UpdateMembershipCommand> _validator;
+        private readonly IValidator<GetMembershipByIdQuery> _validator;
 
-        public UpdateMembershipCommandHandler(IMembershipRepository membershipRepository, IMapper mapper, IValidator<UpdateMembershipCommand> validator)
+        public GetMembershipByIdQueryHandler(IMembershipRepository membershipRepository, IMapper mapper, IValidator<GetMembershipByIdQuery> validator)
         {
             _membershipRepository = membershipRepository;
             _mapper = mapper;
             _validator = validator;
         }
 
-        public async Task<MembershipDto> Handle(UpdateMembershipCommand request, CancellationToken cancellationToken)
+        public async Task<MembershipDto> Handle(GetMembershipByIdQuery request, CancellationToken cancellationToken)
         {
             var validationResult = await _validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
@@ -39,11 +36,8 @@ namespace MembershipExample.Application.Features.Memberships.Commands
                 throw new MembershipNotFoundException($"Membership with id {request.Id} not found.");
             }
 
-            membership.PlanId = request.PlanId;
-            await _membershipRepository.UpdateAsync(membership);
-
             return _mapper.Map<MembershipDto>(membership);
         }
     }
-
 }
+

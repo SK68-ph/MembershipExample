@@ -1,4 +1,5 @@
 using FluentValidation;
+using MembershipExample.Application.Features.Users.Queries;
 
 public class GetUserByIdQueryValidator : AbstractValidator<GetUserByIdQuery>
 {

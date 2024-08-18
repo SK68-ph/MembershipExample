@@ -18,9 +18,4 @@
     <ProjectReference Include="..\MembershipExample.Domain\MembershipExample.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Queries\" />
-    <Folder Include="Validator\" />
-  </ItemGroup>
-
 </Project>

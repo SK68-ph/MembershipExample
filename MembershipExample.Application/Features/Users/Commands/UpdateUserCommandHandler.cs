@@ -41,11 +41,17 @@ namespace MembershipExample.Application.Features.Users.Commands
                 throw new UserNotFoundException("User not found");
             }
 
+            //Check if  authorized to update this user
+            if (request.Id != user.Id)
+            {
+                throw new UnauthorizedAccessException("You are not authorized to update this user");
+            }
+
             // Check if the username is already taken
             var existingUser = await _userRepository.GetByUsernameAsync(request.Username);
             if (existingUser != null && existingUser.Id != user.Id)
             {
-                throw new UsernameAlreadyTakenException("Username is already taken");
+                throw new UsernameAlreadyTakenException($"Username {request.Username} is already taken.");
             }
 
             // Update only if the new value is different
