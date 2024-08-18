@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MembershipExample.Application.Features.Memberships.Queries
+namespace MembershipExample.Application.Features.Users.Queries
 {
-    public record GetMembershipsByUserIdQuery(int UserId) : IRequest<IEnumerable<MembershipDto>>;
+    public record GetUsersQuery : IRequest<List<UserDto>>;
 }

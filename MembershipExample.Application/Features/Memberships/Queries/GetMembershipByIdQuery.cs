@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MembershipExample.Application.Features.Plans.Queries
+namespace MembershipExample.Application.Features.Memberships.Queries
 {
-    public record GetAllPlansQuery() : IRequest<List<PlanDto>>;
+    public record GetMembershipByIdQuery(int Id) : IRequest<MembershipDto>;
 }

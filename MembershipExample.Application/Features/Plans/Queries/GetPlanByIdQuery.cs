@@ -8,5 +8,5 @@ using System.Threading.Tasks;
 
 namespace MembershipExample.Application.Features.Plans.Queries
 {
-    public record GetAllPlansQuery() : IRequest<List<PlanDto>>;
+    public record GetPlanByIdQuery(int Id) : IRequest<PlanDto>;
 }
