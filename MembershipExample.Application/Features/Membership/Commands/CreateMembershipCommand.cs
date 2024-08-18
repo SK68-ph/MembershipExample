@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MembershipExample.Application.Queries
+namespace MembershipExample.Application.Features.Memberships.Commands
 {
-    public record GetMembershipsByUserIdQuery(int UserId) : IRequest<IEnumerable<MembershipDto>>;
+    public record CreateMembershipCommand(int UserId, int PlanId) : IRequest<MembershipDto>;
 }

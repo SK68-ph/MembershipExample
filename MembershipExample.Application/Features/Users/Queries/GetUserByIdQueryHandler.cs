@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
 using MembershipExample.Application.DTOs;
-using MembershipExample.Application.Queries;
 using MembershipExample.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -9,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MembershipExample.Application.Handlers
+namespace MembershipExample.Application.Features.Users.Queries
 {
     public class GetUserByIdQueryHandler : IRequestHandler<GetUserByIdQuery, UserDto>
     {

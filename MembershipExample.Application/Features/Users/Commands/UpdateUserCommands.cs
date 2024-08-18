@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MembershipExample.Application.Queries
+namespace MembershipExample.Application.Features.Users.Commands
 {
-    public record GetAllPlansQuery() : IRequest<IEnumerable<PlanDto>>;
+    public record UpdateUserCommand(int Id, string Email, string Username, string Password) : IRequest<UserDto>;
 }

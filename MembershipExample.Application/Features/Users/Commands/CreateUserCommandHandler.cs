@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using MediatR;
-using MembershipExample.Application.Command.User;
 using MembershipExample.Application.DTOs;
 using MembershipExample.Domain.Entities;
 using MembershipExample.Domain.Interfaces;
@@ -10,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MembershipExample.Application.Handlers
+namespace MembershipExample.Application.Features.Users.Commands
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserDto>
     {
@@ -28,6 +27,7 @@ namespace MembershipExample.Application.Handlers
             var user = new User
             {
                 Username = request.Username,
+                Name = request.Name,
                 Email = request.Email,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
                 CreatedAt = DateTime.UtcNow

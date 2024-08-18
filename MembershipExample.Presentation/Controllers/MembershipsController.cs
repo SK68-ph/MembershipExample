@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using MembershipExample.Application.Command.Membership;
 using MembershipExample.Application.DTOs;
-using MembershipExample.Application.Queries;
+using MembershipExample.Application.Features.Memberships.Commands;
+using MembershipExample.Application.Features.Memberships.Queries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MembershipExample.Api.Controllers

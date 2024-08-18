@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MembershipExample.Application.Command.User
+namespace MembershipExample.Application.Features.Plans.Commands
 {
-    public record UpdateUserCommand(int Id, string Email) : IRequest<UserDto>;
+    public record UpdatePlanCommand(int Id, string Name, decimal Price, int DurationInDays) : IRequest<PlanDto>;
 }

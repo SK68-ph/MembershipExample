@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using MembershipExample.Application.Command.User;
+using MembershipExample.Application.Features.Users.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;

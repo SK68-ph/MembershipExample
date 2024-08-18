@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace MembershipExample.Application.DTOs
 {
-    public record UserDto(int Id, string Username, string Email, DateTime CreatedAt, DateTime? LastLoginAt);
+    public record UserDto(int Id, string Username, string Name, string Email, DateTime CreatedAt, DateTime? LastLoginAt);
 
 }

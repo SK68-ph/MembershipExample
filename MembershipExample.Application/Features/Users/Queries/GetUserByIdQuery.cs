@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MembershipExample.Application.Command.User
+namespace MembershipExample.Application.Features.Users.Queries
 {
-    public record CreateUserCommand(string Username, string Email, string Password) : IRequest<UserDto>;
+    public record GetUserByIdQuery(int Id) : IRequest<UserDto>;
 }

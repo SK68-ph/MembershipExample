@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using MembershipExample.Application.DTOs;
-using MembershipExample.Application.Queries;
+using MembershipExample.Application.Features.Plans.Queries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MembershipExample.Api.Controllers
@@ -24,7 +24,7 @@ namespace MembershipExample.Api.Controllers
             return Ok(result);
         }
 
-        // Add other actions as needed
+
     }
 
 }
