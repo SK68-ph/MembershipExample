@@ -8,5 +8,5 @@ using System.Threading.Tasks;
 
 namespace MembershipExample.Application.Features.Users.Commands
 {
-    public record UpdateUserCommand(int Id, string Email, string Username, string Password) : IRequest<UserDto>;
+    public record UpdateUserCommand(int Id, string? Email, string? Name, string? Username, string? Password) : IRequest<UserDto>;
 }

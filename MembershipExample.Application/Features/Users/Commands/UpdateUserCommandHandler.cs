@@ -60,14 +60,21 @@ namespace MembershipExample.Application.Features.Users.Commands
                 user.Username = request.Username;
             }
 
+            if (user.Name != request.Name)
+            {
+                user.Name = request.Name;
+            }
+
             if (user.Email != request.Email)
             {
                 user.Email = request.Email;
             }
 
-            if (BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
+            if (!string.IsNullOrEmpty(request.Password) && !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
             {
-                user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
+                var salt = BCrypt.Net.BCrypt.GenerateSalt();
+                user.PasswordSalt = salt;
+                user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password, salt);
             }
 
             user.UpdatedAt = DateTime.UtcNow;
