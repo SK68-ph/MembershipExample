@@ -77,7 +77,7 @@ namespace MembershipExample.Api.Controllers
             catch (Exception ex)
             {
                 return HandleException(ex);
-            }
+            }   
         }
 
         [HttpDelete("{id}")]

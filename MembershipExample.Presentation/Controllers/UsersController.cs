@@ -63,7 +63,7 @@ namespace MembershipExample.Api.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<ActionResult<UserDto>> UpdateUser(int id, UpdateUserCommand command)
         {
             try
